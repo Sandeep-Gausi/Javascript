@@ -1,0 +1,34 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-test',
+  template: `
+   <h1> 
+     welcome {{name}}
+   </h1>
+   <button (click)="onClick($event)">Greet</button>
+  {{greeting}} {{knowType}}
+  <button (click)="greeting='Welcome sandy'">Greet</button>
+  {{greeting}} 
+  `,
+  styles: []
+})
+export class TestComponent implements OnInit {
+
+  public name="SAndy";
+  public greeting ="";
+  public knowType="";
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+  onClick(event)
+  {
+    console.log(event);
+   console.log("Welcome to the page");
+   this.greeting='Welcome to the page';
+   this.knowType=event.type;
+  }
+
+}

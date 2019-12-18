@@ -1,0 +1,33 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-test',
+  template: `
+   <h1>welcome {{name}}</h1>
+  <input [id]="myId" type="text" value="sandy">
+  <input [disabled]="true" id="{{myId}}" type="text" value="sandy">
+  <input [disabled]="isDisabled" type="text" value="sandy">
+  <input bind-disabled="isDisabled" [id]="myId" type="text" value="sandy">
+
+
+  `,
+  styles: []
+})
+export class TestComponent implements OnInit {
+
+  public name = "sandy";
+  public myId="testId";
+  public isDisabled=false;
+  
+
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+  greetUser()
+  {
+    return "hello"+this.name;
+  }
+
+}
